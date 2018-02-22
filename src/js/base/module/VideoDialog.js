@@ -18,7 +18,7 @@ export default class VideoDialog {
 
     const body = [
       '<div class="form-group note-form-group row-fluid">',
-      `<label class="note-form-label">${this.lang.video.url} <small class="text-muted">${this.lang.video.providers}</small></label>`,
+      `<label class="note-form-label">${this.lang.video.url} <small class="text-muted">(YouTube only)</small></label>`,
       '<input class="note-video-url form-control note-form-control note-input" type="text" />',
       '</div>'
     ].join('');
@@ -87,8 +87,7 @@ export default class VideoDialog {
       const youtubeId = ytMatch[1];
       $video = $('<iframe>')
         .attr('frameborder', 0)
-        .attr('src', '//www.youtube.com/embed/' + youtubeId)
-        .attr('width', '640').attr('height', '360');
+        .attr('src', '//www.youtube.com/embed/' + youtubeId);
     } else if (igMatch && igMatch[0].length) {
       $video = $('<iframe>')
         .attr('frameborder', 0)
